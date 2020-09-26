@@ -1,24 +1,7 @@
-# site
+# VexorWebsite
 
-## Project setup
-```
-npm install
-```
+#### A blazingly fast SNP *(Social Networking Platform)* made in VueJS and Firebase.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Soon to be done:
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Make the Backend use Express and MongoDB.
