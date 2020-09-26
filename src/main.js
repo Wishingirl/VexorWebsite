@@ -11,5 +11,7 @@ Vue.use(FishUI)
 
 //Starting Vue
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+})
