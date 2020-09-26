@@ -1,40 +1,60 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1> hello! </h1>
-    <router-view></router-view>
-    <fish-button>Testing</fish-button>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-// Import modules.
-import Firebase from 'firebase';
-import config from './config';
-
-
-// Start Firebase DB and App.
-
-let Application = Firebase.initializeApp(config);
-let db = Application.database();
-
-let UsersRef = db.ref('users');
+import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
-  firebase:{
-    users: UsersRef
-    },
-    data(){
-      return {
-        newUser:{
-          name: '',
-          email: '',
-          password: ''
-        }
-        }
-      }
 
-}
+  components: {
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
-
